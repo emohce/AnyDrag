@@ -1,24 +1,8 @@
-# AnyDrag
+<!-- codenote-agent-ecosystem:start -->
+# anydrag AI entry
 
-macOS menu bar utility that lets you move any window by holding a modifier key and dragging anywhere on it -- bypasses Accessibility API lag by simulating a native title bar drag at the window server level.
+Load ../../CzzProj/CodeNote/AiRef/VibePractice/Vibe_Rules/VibeAi.md, its short routing/README.md and the applicable short host adapter once; apply both baseline guards selected by that router. Global rules live only in CodeNote; this project keeps no portable copy. If that checkout is unavailable, report the missing central dependency and pause only the actions that need it. Reuse unchanged context during the task.
 
-## Tech Stack
-- Swift 5.9, macOS 13.0+. AppKit core (engine, menu bar, overlays); the Settings window is SwiftUI hosted in an `NSHostingController`.
-- XcodeGen (`project.yml`) generates the Xcode project
-- Localized: English, Simplified Chinese (via `Localizable.strings` + `LocalizationOverride`; SwiftUI reads them through the `L(_:)` helper)
-
-## Architecture
-- `main.swift` -- manual NSApplication setup (no storyboards, no @main)
-- `DragEngine` -- CGEvent tap on a dedicated high-priority thread intercepts mouse events when modifier held
-- `TitleBarDragStrategy` -- rewrites mouse coordinates to title bar region so the window server handles the drag natively (zero per-frame IPC)
-- `MenuBarController` -- NSStatusItem menu bar UI
-- `TilingPanel` -- right-click tiling overlay (halves, quarters, fill)
-- `PermissionManager` -- Accessibility permission prompt
-- Settings (`Sources/Settings/`) -- a SwiftUI `NavigationSplitView` with a native System-Settings-style sidebar, aligned with the sibling app HyperCapslock. `PreferencesWindowController` hosts `SettingsRootView`; `SettingsStore` is the one ObservableObject bridging SwiftUI bindings to the live `DragEngine` + `Preferences` (UserDefaults) + `Analytics`. Pages: Window Drag / Window Resize / Middle Click / Excluded Apps / General / About.
-
-## Build
-```bash
-brew install xcodegen
-xcodegen generate
-open AnyDrag.xcodeproj  # then Cmd+R
-```
+Load [project rules](vibe/rules/README.md). Detailed project procedures are conditional on the affected code, UI, data or runtime surface. Routine replies use concise numbered points; omit empty modules. Other tool entries route to this file.
+<!-- projection-sha256: 3a15893293cd42d935e1ec437b0e9392be81e53cfb8e7a0d131f29f106abed9e -->
+<!-- codenote-agent-ecosystem:end -->
