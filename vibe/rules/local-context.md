@@ -3,13 +3,13 @@
 
 Project-owned conditional detail. Edit this local owner for project-specific facts; global policy stays in the compact core. Commands and inline paths are relative to the repository root unless their original text says otherwise. Read the sections relevant to the affected surface before material work.
 
-本仓库是 `CzzRef/AnyDrag` 的本机 GitFork 检出，上游为 `XueshiQiao/AnyDrag`。本地开发主分支是 `czz-dev`。不要复述 CodeNote 规则正文。
+本仓库是 `emohce/AnyDrag` 的本机 GitFork 检出，上游为 `XueshiQiao/AnyDrag`。本地开发主分支是 `czz-dev`。不要复述 CodeNote 规则正文。
 
 - 过程枢纽：[vibe/specs/PROJECT_STATUS.md](<../specs/PROJECT_STATUS.md>)
 - 项目规则：[README.md](<README.md>)
 - 架构地图：[../knowledge/architecture.md](<../knowledge/architecture.md>)
 
-硬边界：不要建空的 `vibe/ai-db/` 或 `vibe/requirements/`；上游 PR 不要带 `vibe/`；未授权不要 `xcodegen` 以外的公证、Sparkle 发布、Homebrew tap 或 `bump-version.sh --push`。用户给出的 `emohce/AnyDrag` 当时与上游 `main` 完全一致，GitFork origin 使用 `CzzRef/AnyDrag`。
+硬边界：不要建空的 `vibe/ai-db/` 或 `vibe/requirements/`；上游 PR 不要带 `vibe/`；未授权不要 `xcodegen` 以外的公证、Sparkle 发布、Homebrew tap 或 `bump-version.sh --push`。`origin` 是用户给出的 `emohce/AnyDrag`，不是 `CzzRef/AnyDrag`。
 
 ## Project context from AGENTS.md
 

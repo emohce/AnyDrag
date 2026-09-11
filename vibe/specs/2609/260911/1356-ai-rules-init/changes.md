@@ -13,8 +13,8 @@
 
 | 对象 | 类型 | 核心说明 |
 | --- | --- | --- |
-| GitHub `CzzRef/AnyDrag` | 新增 fork | 从 `XueshiQiao/AnyDrag` 声明 fork，仅 default branch |
-| `/Users/gdkmjd/work/czz/GitFork/AnyDrag/` | 新增 clone | `origin=CzzRef/AnyDrag`，`upstream=XueshiQiao/AnyDrag`，分支 `czz-dev@9eb03c93` |
+| GitHub `CzzRef/AnyDrag` | 误造后已不存在 | 2026-09-11 后续纠正：用户给出的仓是 `emohce/AnyDrag`，不应再 fork 到 CzzRef；远端 404 |
+| `/Users/gdkmjd/work/czz/GitFork/AnyDrag/` | 保留 clone | `origin=emohce/AnyDrag`，`upstream=XueshiQiao/AnyDrag`，分支 `czz-dev@9eb03c93` |
 | `CLAUDE.md` | 改动 | 符号链接落实为普通文件，再投影为短入口 |
 | `AGENTS.md` | 改动 | 官方贡献者说明抽出后换成 CodeNote 短入口 |
 | `vibe/rules/` | 新增 | 项目规则、工作流、知识、文档路由、local-context |

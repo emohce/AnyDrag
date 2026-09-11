@@ -48,8 +48,8 @@ Task: 1356-ai-rules-init
 
 ## Goal And Scope
 
-- Goal: 把 `CzzRef/AnyDrag` 落到 GitFork，建立 `czz-dev`，并初始化 CodeNote adapter/rule/knowledge/process 链，供后续改造。
-- In scope: GitHub fork；clone；`origin`/`upstream`；本地 `czz-dev`；短入口；`vibe/rules`；`vibe/knowledge`；`vibe/specs`；CodeNote catalog + 本机 binding；project-rules 发布；初始化后本地提交。
+- Goal: 把用户给出的 `emohce/AnyDrag` 落到 GitFork，建立 `czz-dev`，并初始化 CodeNote adapter/rule/knowledge/process 链，供后续改造。不要再造 `CzzRef/AnyDrag`。
+- In scope: clone 用户已有 fork；`origin`/`upstream`；本地 `czz-dev`；短入口；`vibe/rules`；`vibe/knowledge`；`vibe/specs`；CodeNote catalog + 本机 binding；project-rules 发布；初始化后本地提交。
 - Out of scope: 应用代码改造；Xcode 构建/公证；Accessibility 真机实验；push；把 `vibe/` 送到 `upstream`；Home/Hook/MCP 本机 apply。
 - Success evidence: checkout 在 `czz-dev`；project audit 绿灯或仅余官方短入口 inherited findings；resolver `--project anydrag` 命中本 clone。
 

@@ -6,14 +6,14 @@ Tool: tool-neutral (codex, claude, grok, and any CodeNote-routed agent)
 
 - Name: `AnyDrag`
 - Path: GitFork clone at `GitFork/AnyDrag`
-- Origin: `origin=CzzRef/AnyDrag`，`upstream=XueshiQiao/AnyDrag`
+- Origin: `origin=emohce/AnyDrag`，`upstream=XueshiQiao/AnyDrag`
 - Local working branch: `czz-dev`（从 fork `main@9eb03c93` / CalVer `26.09.114` 拉出）
 - License: GPL-3.0（根 `LICENSE`）。本地改造仍受 GPL 约束，不要把 `vibe/` 或私有规则送进 `upstream` PR。
 - Stack: Swift 5.9 + AppKit 核心 + SwiftUI Settings；XcodeGen（`project.yml`）生成 `AnyDrag.xcodeproj`；macOS 13+
 - Purpose: 按住修饰键在窗口任意位置拖动，通过把鼠标坐标改写到标题栏区域，让 Window Server 走原生拖动，而不是逐帧 Accessibility IPC
 - Initialization date: 2026-09-11
 
-用户给出的 `emohce/AnyDrag` 是同一上游的组织 fork，当时与 `XueshiQiao/AnyDrag@main` 完全一致（ahead 0 / behind 0）。GitFork 按声明 owner 落到 `CzzRef/AnyDrag`，`upstream` 指向真正来源仓。
+用户给出的 `emohce/AnyDrag` 已是其对 `XueshiQiao/AnyDrag` 的组织 fork，且当前身份有 admin。本地检出在 `GitFork/AnyDrag`，`origin` 必须是这份仓，不要再造 `CzzRef/AnyDrag`。
 
 ## Detected Manifests
 

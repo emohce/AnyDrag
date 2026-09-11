@@ -17,7 +17,7 @@ Compact process hub for active AI work. This file routes current tasks to projec
 
 - Status: fork cloned to `GitFork/AnyDrag`; local working branch is `czz-dev` from `origin/main` `9eb03c93` (CalVer `26.09.114`). CodeNote AI rule chain initialized. No application code changed.
 - Latest task docs: [task card](2609/260911/1356-ai-rules-init/task-card.md), [changes](2609/260911/1356-ai-rules-init/changes.md).
-- Remotes: `origin=CzzRef/AnyDrag`，`upstream=XueshiQiao/AnyDrag`. `czz-dev` is local-only; not pushed.
+- Remotes: `origin=emohce/AnyDrag`，`upstream=XueshiQiao/AnyDrag`. `czz-dev` is local-only; not pushed. 误造的 `CzzRef/AnyDrag` 远端已不存在；本地 GitFork 目录保留。
 - CodeNote catalog: `project-index.json` + this-host `workspace.local.json` binding.
 
 ## Active Task Index
@@ -25,6 +25,7 @@ Compact process hub for active AI work. This file routes current tasks to projec
 | Task | Status | Authoritative Doc | Verification | Notes |
 | --- | --- | --- | --- | --- |
 | AI rules init | `implemented-local / gitfork-local-committed / unpushed` | [task-card](2609/260911/1356-ai-rules-init/task-card.md) | project audit 仅余官方短入口 inherited | `2ee37f5`；未推送 |
+| origin 改回 emohce | `corrected-local / czzref-remote-absent` | CodeNote [1451](../../../../CzzProj/CodeNote/vibe/specs/2609/260911/1451-gitfork-land-existing-origin/task-card.md) | `git ls-remote origin` → `9eb03c93` | 保留 `GitFork/AnyDrag` |
 
 ## Verification State
 

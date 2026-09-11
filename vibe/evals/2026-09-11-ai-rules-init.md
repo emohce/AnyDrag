@@ -6,10 +6,9 @@ Date: 2026-09-11
 
 ## Migration Summary
 
-- User input `git@github.com:emohce/AnyDrag.git` is not a declared GitFork owner.
-- Probe: `emohce/AnyDrag` is a fork of `XueshiQiao/AnyDrag`, identical to parent `main` (ahead 0 / behind 0). `CzzRef/AnyDrag` did not exist.
-- Created `CzzRef/AnyDrag` with `--default-branch-only`.
-- Cloned `git@github.com:CzzRef/AnyDrag.git` to `GitFork/AnyDrag`.
+- User input `git@github.com:emohce/AnyDrag.git` is already the user's fork (`permissions.admin=true`).
+- Probe: `emohce/AnyDrag` is a fork of `XueshiQiao/AnyDrag`, identical to parent `main` (ahead 0 / behind 0).
+- Correction 2026-09-11: do **not** create `CzzRef/AnyDrag`. Keep local `GitFork/AnyDrag` and set `origin=emohce/AnyDrag`. The extra CzzRef remote is 404.
 - Added `upstream=XueshiQiao/AnyDrag` and created local working branch `czz-dev` at `9eb03c93` (CalVer `26.09.114`).
 - Materialized upstream `CLAUDE.md` symlink into a regular file (`d20c446`) so project-rules apply could read it.
 - Applied CodeNote project-rules projections: `AGENTS.md`, `CLAUDE.md`, `vibe/rules/README.md`, `vibe/rules/local-context.md`.
@@ -22,7 +21,7 @@ Date: 2026-09-11
 
 ### Detector
 
-`onboard-czz-fork` `detect_czz_fork.py` without `--probe` on `CzzRef/AnyDrag`: `is_known_fork_owner=true`, `should_clone=true`. `--probe` failed because this host's `gh api --jq` emits ANSI color into stdout; parent/fork facts were confirmed with `gh api`: `fork=true`, `parent=XueshiQiao/AnyDrag`.
+`onboard-czz-fork` `detect_czz_fork.py --probe` on `emohce/AnyDrag` must return `should_clone=true` and `should_create_github_fork=false`. ANSI-colored `gh api --jq` is no longer used.
 
 ### Final Project Audit
 
