@@ -7,7 +7,7 @@
 | 批次 | 提交 | 文件数 | 核心说明 |
 | --- | --- | --- | --- |
 | CLAUDE 落实 | `d20c446` | 1 | 把上游 `CLAUDE.md` 符号链接变成与 `AGENTS.md` 同内容的普通文件 |
-| 规则初始化 | pending same-turn | 18 | 短入口、vibe 树、过程枢纽 |
+| 规则初始化 | `2ee37f5` | 18 | 短入口、vibe 树、过程枢纽 |
 
 ## 2. 交付物清单
 
@@ -21,7 +21,7 @@
 | `vibe/specs/` | 新增 | 过程枢纽与本任务卡片 |
 | `vibe/knowledge/` | 新增 | 架构地图与空 ADR/error-memory |
 | `vibe/evals/` | 新增 | 初始化核验记录 |
-| CodeNote `vibe/knowledge/project-index.json` | 改动 | 登记 `anydrag` 并恢复 `routes.rules` |
+| CodeNote `vibe/knowledge/project-index.json` | 改动 | 登记 `anydrag` 并恢复 `routes.rules`（CodeNote `f799e408`，未推送） |
 | CodeNote `vibe/knowledge/workspace-config/workspace.local.json` | 改动（ignored） | 本机绑定 `GitFork/AnyDrag` |
 
 ## 3. 逐批清单
@@ -32,7 +32,7 @@
 | --- | --- |
 | `CLAUDE.md` | `120000` 符号链接 → `100644` 普通文件，内容与当时 `AGENTS.md` 相同 |
 
-### 规则初始化（本轮未提交前工作区）
+### 规则初始化 `2ee37f5`
 
 | 文件 | 核心说明 |
 | --- | --- |

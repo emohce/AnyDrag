@@ -24,7 +24,7 @@ Compact process hub for active AI work. This file routes current tasks to projec
 
 | Task | Status | Authoritative Doc | Verification | Notes |
 | --- | --- | --- | --- | --- |
-| AI rules init | `implemented-local / gitfork-local-pending-commit / unpushed` | [task-card](2609/260911/1356-ai-rules-init/task-card.md) | project audit 仅余官方短入口 inherited | no app code |
+| AI rules init | `implemented-local / gitfork-local-committed / unpushed` | [task-card](2609/260911/1356-ai-rules-init/task-card.md) | project audit 仅余官方短入口 inherited | `2ee37f5`；未推送 |
 
 ## Verification State
 
