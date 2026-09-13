@@ -9,6 +9,8 @@
 | porbeagle | `a222757/porbeagle` | `origin/main` `9eb03c93` | 干净、无独有提交 | 已拆除；目录与分支不存在 |
 | 260912-yin-yang-probe | `a222757/260912-yin-yang-probe` | `origin/main` `9eb03c93` | 干净、无独有提交；曾挂在 `czz-dev` 下 | 已拆除；父树 `childWorktreeIds` 已空 |
 | a222757/给我测试一下这个Orca本身重命名的能力 | `a222757/给我测试一下这个Orca本身重命名的能力` | `origin/main` `9eb03c93` | 干净、无独有提交、无活终端 | 已拆除；目录与分支不存在 |
+| grok/260912-paseo-probe | `grok/260912-paseo-probe` | `czz-dev` 祖先 `a788fe25` | 干净、无独有提交、无需合并 | 已拆除；Orca 卡、Git worktree、本地分支与 `~/.paseo/worktrees/0glwb9as/` 均不存在 |
+| a222757/settings-polish | `a222757/settings-polish` | `origin/main` `9eb03c93` | 无独有提交；5 个 Settings 未提交文件已合入 `czz-dev` `2dcb04d` | 已拆除；Orca 卡、路径、本地分支均不存在 |
 
 物理迁移：不迁移。这些树从未写入 `vibe/specs/` 任务卡，没有可逻辑归档的旧正文；替代入口即本记录与本次 [task-card](../../vibe/specs/2609/260913/1005-orca-test-worktree-cleanup/task-card.md)。
 
@@ -16,4 +18,4 @@
 
 后续默认：用户说清理时同时拆 Orca 卡、Git worktree 和本地分支，并回写本索引；只有当前消息明确「只清理 Orca」才留 Git 引用。策略在 CodeNote [worktree-tasks §6](../../../../CzzProj/CodeNote/AiRef/VibePractice/Vibe_Rules/process/worktree-tasks.md#6-integration-and-cleanup)。
 
-2026-09-13 真实路径再核：三棵树相对 `origin/main` 无独有提交，无需合并。`git worktree list` / `git branch --list` 无对应项；`git worktree prune -n` 空；`/Users/gdkmjd/orca/workspaces/AnyDrag/{porbeagle,260912-yin-yang-probe,给我测试一下这个Orca本身重命名的能力}` 不存在；`.orca-worktree-trash` 为空。剩余活树 `settings-polish` 与 `grok/260912-paseo-probe` 仍可列出，未纳入本轮拆除。
+2026-09-13 真实路径再核：前三棵树相对 `origin/main` 无独有提交。同日拆除 `grok/260912-paseo-probe`。随后将 `settings-polish` 五份 Settings 打磨合入 `czz-dev` `2dcb04d` 后完全拆除；当前 Git 清单仅主目录 `czz-dev`。

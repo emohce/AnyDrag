@@ -15,7 +15,7 @@ Compact process hub for active AI work. This file routes current tasks to projec
 
 ## Current Focus
 
-- Status: 已拆除三棵无独有提交的 Orca 测试工作树，并补主目录总控/归档；应用代码仍未改。`czz-dev` 基于 `origin/main` `9eb03c93`（CalVer `26.09.114`）。
+- Status: Settings 打磨已合入 `czz-dev`；Orca 测试树与 `settings-polish` 均已拆除。当前仅主目录工作树。
 - Latest task docs: [清理归档任务卡](2609/260913/1005-orca-test-worktree-cleanup/task-card.md), [changes](2609/260913/1005-orca-test-worktree-cleanup/changes.md)。规则初始化仍见 [1356 task card](2609/260911/1356-ai-rules-init/task-card.md)。
 - Worktree control: [WORKTREE_TASKS.md](../../WORKTREE_TASKS.md)；已拆树归档 [cleanup-260912-orca-tests.md](../../docs/worktree-control/cleanup-260912-orca-tests.md)。
 - Remotes: `origin=emohce/AnyDrag`，`upstream=XueshiQiao/AnyDrag`. `czz-dev` is local-only; not pushed. 误造的 `CzzRef/AnyDrag` 远端已不存在；本地 GitFork 目录保留。
@@ -27,13 +27,13 @@ Compact process hub for active AI work. This file routes current tasks to projec
 | --- | --- | --- | --- | --- |
 | AI rules init | `implemented-local / gitfork-local-committed / unpushed` | [task-card](2609/260911/1356-ai-rules-init/task-card.md) | project audit 仅余官方短入口 inherited | `2ee37f5`；未推送 |
 | origin 改回 emohce | `corrected-local / czzref-remote-absent` | CodeNote [1451](../../../../CzzProj/CodeNote/vibe/specs/2609/260911/1451-gitfork-land-existing-origin/task-card.md) | `git ls-remote origin` → `9eb03c93` | 保留 `GitFork/AnyDrag` |
-| Orca 测试树清理 | `docs-uncommitted / git-removed` | [1005 task-card](2609/260913/1005-orca-test-worktree-cleanup/task-card.md) | `control-check` 覆盖剩余子树 | 三棵测试树已拆；文档未提交 |
+| Orca 测试树清理 | `settings-merged / trees-removed / push-pending` | [1005 task-card](2609/260913/1005-orca-test-worktree-cleanup/task-card.md) | `git worktree list` 仅 `czz-dev` | Settings 打磨 `2dcb04d`；`settings-polish` 已拆 |
 
 ## Verification State
 
 - Last verified: 2026-09-13 (worktree inventory + control-check)
 - Commands: `git worktree list`；`orca worktree list`；`worktree_task.py control-check`
-- Unverified gaps: `xcodegen generate`、Xcode 构建、Accessibility 真机手势、Sparkle、CI 公证；`settings-polish` 脏 Settings 源码含义
+- Unverified gaps: `xcodegen generate`、Xcode 构建、Accessibility 真机手势、Sparkle、CI 公证；Settings 打磨未跑 UI 预览
 - Latest Sidecar result: not applicable — onboard path already verified
 - Latest Prior Task Overlap: reference-only GitFork/react-doctor adapter shape; decision `new-task`
 - Latest Documentation Impact: `project-current`（工作树总控与清理归档）
@@ -58,8 +58,7 @@ Compact process hub for active AI work. This file routes current tasks to projec
 
 | Item | Source turn / task | Owner | Next gate | Status |
 | --- | --- | --- | --- | --- |
-| `settings-polish` 仍保留 | 本轮清理 | 用户 | 确认脏 Settings 去向后再清或纳管 | open |
-| `grok/260912-paseo-probe` 仍保留 | 本轮清理 | 用户 | 点名后再清或纳管 | open |
+|  |  |  |  | no-pending |
 
 ## Memory Routing
 
