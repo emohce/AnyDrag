@@ -18,7 +18,7 @@ Compact process hub for active AI work. This file routes current tasks to projec
 - Status: Settings 打磨已合入 `czz-dev`；Orca 测试树与 `settings-polish` 均已拆除。当前仅主目录工作树。
 - Latest task docs: [清理归档任务卡](2609/260913/1005-orca-test-worktree-cleanup/task-card.md), [changes](2609/260913/1005-orca-test-worktree-cleanup/changes.md)。规则初始化仍见 [1356 task card](2609/260911/1356-ai-rules-init/task-card.md)。
 - Worktree control: [WORKTREE_TASKS.md](../../WORKTREE_TASKS.md)；已拆树归档 [cleanup-260912-orca-tests.md](../../docs/worktree-control/cleanup-260912-orca-tests.md)。
-- Remotes: `origin=emohce/AnyDrag`，`upstream=XueshiQiao/AnyDrag`. `czz-dev` is local-only; not pushed. 误造的 `CzzRef/AnyDrag` 远端已不存在；本地 GitFork 目录保留。
+- Remotes: `origin=emohce/AnyDrag`，`upstream=XueshiQiao/AnyDrag`. `czz-dev` 已推 `origin/czz-dev`。误造的 `CzzRef/AnyDrag` 远端已不存在；本地 GitFork 目录保留。
 - CodeNote catalog: `project-index.json` + this-host `workspace.local.json` binding.
 
 ## Active Task Index
@@ -27,7 +27,7 @@ Compact process hub for active AI work. This file routes current tasks to projec
 | --- | --- | --- | --- | --- |
 | AI rules init | `implemented-local / gitfork-local-committed / unpushed` | [task-card](2609/260911/1356-ai-rules-init/task-card.md) | project audit 仅余官方短入口 inherited | `2ee37f5`；未推送 |
 | origin 改回 emohce | `corrected-local / czzref-remote-absent` | CodeNote [1451](../../../../CzzProj/CodeNote/vibe/specs/2609/260911/1451-gitfork-land-existing-origin/task-card.md) | `git ls-remote origin` → `9eb03c93` | 保留 `GitFork/AnyDrag` |
-| Orca 测试树清理 | `settings-merged / trees-removed / push-pending` | [1005 task-card](2609/260913/1005-orca-test-worktree-cleanup/task-card.md) | `git worktree list` 仅 `czz-dev` | Settings 打磨 `2dcb04d`；`settings-polish` 已拆 |
+| Orca 测试树清理 | `settings-merged / trees-removed / origin-pushed` | [1005 task-card](2609/260913/1005-orca-test-worktree-cleanup/task-card.md) | `git worktree list` 仅 `czz-dev` | Settings 打磨 `2dcb04d`；已推 `origin/czz-dev` |
 
 ## Verification State
 
@@ -43,7 +43,7 @@ Compact process hub for active AI work. This file routes current tasks to projec
 
 - Gate: Developer ID 公证 / Sparkle 发布 / Homebrew tap / `bump-version.sh --push`
 - Blocking condition: this task does not authorize live Accessibility experiments or publish
-- Rollback note: `czz-dev` 仅含上游 `9eb03c93` 加本仓 AI 规则初始化；未推送
+- Rollback note: `czz-dev` 含上游 `9eb03c93`、规则初始化、Settings 打磨与工作树归档；已推 `origin/czz-dev`
 
 ## Governance Baseline
 
