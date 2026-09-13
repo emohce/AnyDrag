@@ -159,7 +159,6 @@ func optionRow<Control: View>(
         Spacer(minLength: 8)
         control()
     }
-    .padding(.vertical, 2)
 }
 
 // MARK: - Sidebar row icon
@@ -218,7 +217,7 @@ struct SettingsRootView: View {
                 }
             }
             .listStyle(.sidebar)
-            .navigationSplitViewColumnWidth(min: 210, ideal: 216, max: 240)
+            .navigationSplitViewColumnWidth(min: 215, ideal: 220, max: 240)
             .safeAreaInset(edge: .top, spacing: 0) { brand }
             .safeAreaInset(edge: .bottom, spacing: 0) { statusFooter }
         } detail: {

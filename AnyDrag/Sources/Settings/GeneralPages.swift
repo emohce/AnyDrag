@@ -50,10 +50,6 @@ struct GeneralPage: View {
 
             // ─── Diagnostics (advanced) ─────────────────────────────
             Section {
-                Text(L("diagnostics.advanced.note"))
-                    .font(.caption).foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
-
                 Toggle(isOn: Binding(get: { store.showDebugDot }, set: { store.setShowDebugDot($0) })) {
                     featureLabel("smallcircle.filled.circle", Color(nsColor: .systemGray),
                                  L("diagnostics.showDot"), L("diagnostics.showDot.subtitle"))
@@ -78,6 +74,10 @@ struct GeneralPage: View {
                 )
             } header: {
                 Text(L("Diagnostics"))
+            } footer: {
+                Text(L("diagnostics.advanced.note"))
+                    .textCase(nil)
+                    .fixedSize(horizontal: false, vertical: true)
             }
         }
         .formStyle(.grouped)
@@ -93,7 +93,7 @@ struct GeneralPage: View {
         value: CGFloat, range: ClosedRange<CGFloat>, isDefault: Bool,
         set: @escaping (CGFloat) -> Void, reset: @escaping () -> Void
     ) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: 2) {
             HStack {
                 iconLabel(symbol, color, title)
                 Spacer()

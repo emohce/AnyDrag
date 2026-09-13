@@ -21,7 +21,7 @@ struct WindowDragPage: View {
     var body: some View {
         Form {
             Section {
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: 6) {
                     ModifierChipPicker(selection: store.modifiers) { proposed in
                         store.setModifiers(proposed)
                     }
@@ -29,16 +29,15 @@ struct WindowDragPage: View {
                         .font(.system(size: 11))
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
-                    if store.modifiers.contains(.hyper) {
-                        Text(L("modifier.hyper.hint"))
-                            .font(.system(size: 11))
-                            .foregroundStyle(.secondary)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
                 }
-                .padding(.vertical, 4)
             } header: {
                 Text(L("label.primaryModifier"))
+            } footer: {
+                if store.modifiers.contains(.hyper) {
+                    Text(L("modifier.hyper.hint"))
+                        .textCase(nil)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
 
             Section {
@@ -54,37 +53,30 @@ struct WindowDragPage: View {
             }
             .disabled(store.modifiers.isEmpty)
 
-            // ─── Advanced: centered-window size + per-app title-bar Y offset ──
+            // One value for every centered path — the tiling panel's Center
+            // button and the middle-click drag-down gesture (its live
+            // preview included). See DragEngine.centeredSizePercent.
             Section {
-                // One value for every centered path — the tiling panel's Center
-                // button and the middle-click drag-down gesture (its live
-                // preview included). See DragEngine.centeredSizePercent.
-                HStack(spacing: 12) {
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text(L("centeredSize.title"))
-                        Text(L("centeredSize.note"))
-                            .font(.caption).foregroundStyle(.secondary)
-                            .fixedSize(horizontal: false, vertical: true)
+                Picker(selection: Binding(
+                    get: { store.centeredSizePercent },
+                    set: { store.setCenteredSizePercent($0) }
+                )) {
+                    ForEach(Preferences.centeredPercentStops, id: \.self) { percent in
+                        Text(String(format: L("centeredSize.value.format"), percent))
+                            .tag(percent)
                     }
-                    Spacer(minLength: 0)
-                    Picker("", selection: Binding(
-                        get: { store.centeredSizePercent },
-                        set: { store.setCenteredSizePercent($0) }
-                    )) {
-                        ForEach(Preferences.centeredPercentStops, id: \.self) { percent in
-                            Text(String(format: L("centeredSize.value.format"), percent))
-                                .tag(percent)
-                        }
-                    }
-                    .labelsHidden()
-                    .frame(width: 84)
+                } label: {
+                    Text(L("centeredSize.title"))
                 }
-                .padding(.vertical, 2)
-
-                Text(L("perAppOffset.note"))
-                    .font(.caption).foregroundStyle(.secondary)
+            } header: {
+                Text(L("section.advanced"))
+            } footer: {
+                Text(L("centeredSize.note"))
+                    .textCase(nil)
                     .fixedSize(horizontal: false, vertical: true)
+            }
 
+            Section {
                 ForEach(store.perAppOffsets, id: \.bundleID) { item in
                     perAppOffsetRow(item)
                 }
@@ -110,8 +102,10 @@ struct WindowDragPage: View {
                         }
                     )
                 }
-            } header: {
-                Text(L("section.advanced"))
+            } footer: {
+                Text(L("perAppOffset.note"))
+                    .textCase(nil)
+                    .fixedSize(horizontal: false, vertical: true)
             }
         }
         .formStyle(.grouped)
@@ -168,7 +162,6 @@ struct WindowDragPage: View {
             .buttonStyle(.plain)
             .help(L("perAppOffset.remove"))
         }
-        .padding(.vertical, 2)
     }
 }
 
@@ -188,9 +181,6 @@ struct WindowResizePage: View {
                 ) { id in
                     if let trigger = ResizeTrigger(rawValue: id) { store.setResizeTrigger(trigger) }
                 }
-                .padding(.vertical, 4)
-            } header: {
-                Text(L("section.windowResize"))
             }
 
             // Secondary modifier — only relevant for the left-drag trigger.
@@ -204,7 +194,6 @@ struct WindowResizePage: View {
                     ) { proposed in
                         store.setAugment(proposed)
                     }
-                    .padding(.vertical, 4)
                 } header: {
                     Text(L("leftResize.augment"))
                 }
@@ -242,9 +231,6 @@ struct MiddleClickPage: View {
                 ) { id in
                     if let action = MiddleAction(rawValue: id) { store.setMiddleAction(action) }
                 }
-                .padding(.vertical, 4)
-            } header: {
-                Text(L("Middle-click action"))
             }
 
             // Tile sub-options apply only to "Tile by direction".

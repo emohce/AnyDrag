@@ -9,7 +9,7 @@ struct CardOption: Identifiable, Equatable {
     let id: String
     let title: String
     let symbol: String
-    var subtitle: String
+    let subtitle: String
 }
 
 struct CardOptionPicker: View {
@@ -24,8 +24,8 @@ struct CardOptionPicker: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack(spacing: 10) {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(spacing: 8) {
                 ForEach(options) { opt in
                     OptionCard(option: opt, isSelected: opt.id == selectedID) {
                         if opt.id != selectedID { onChange(opt.id) }
@@ -57,11 +57,11 @@ private struct OptionCard: View {
     @State private var hovering = false
 
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 6) {
             Image(systemName: option.symbol)
-                .font(.system(size: 22, weight: .regular))
+                .font(.system(size: 20, weight: .regular))
                 .foregroundStyle(isSelected ? Color.accentColor : Color.secondary)
-                .frame(height: 26)
+                .frame(height: 24)
             Text(option.title)
                 .font(.system(size: 12, weight: isSelected ? .semibold : .medium))
                 .foregroundStyle(isSelected ? Color.accentColor : Color(nsColor: .labelColor))
@@ -69,7 +69,7 @@ private struct OptionCard: View {
                 .minimumScaleFactor(0.8)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 78)
+        .frame(height: 70)
         .background(RoundedRectangle(cornerRadius: 8, style: .continuous).fill(bgColor))
         .overlay(RoundedRectangle(cornerRadius: 8, style: .continuous)
             .strokeBorder(borderColor, lineWidth: isSelected ? 1.5 : 1))

@@ -31,7 +31,7 @@ struct AboutPage: View {
                     Text(versionString).font(.callout).foregroundStyle(.secondary)
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 12)
+                .padding(.vertical, 8)
             }
 
             Section {
@@ -45,15 +45,15 @@ struct AboutPage: View {
                 Toggle(isOn: Binding(get: { store.analyticsEnabled }, set: { store.setAnalyticsEnabled($0) })) {
                     iconLabel("chart.bar.fill", .purple, L("about.analytics.toggle"))
                 }
-                Text(L("about.analytics.subtitle"))
-                    .font(.caption).foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-
-            Section {
-                Text(L("about.copyright"))
-                    .font(.caption).foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .center)
+            } footer: {
+                VStack(spacing: 8) {
+                    Text(L("about.analytics.subtitle"))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text(L("about.copyright"))
+                        .frame(maxWidth: .infinity)
+                }
+                .textCase(nil)
             }
         }
         .formStyle(.grouped)
