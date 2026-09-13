@@ -11,6 +11,7 @@ Tool: tool-neutral (codex, claude, grok, and any CodeNote-routed agent)
 
 - Architecture map: [architecture.md](architecture.md)
 - Error memory: [error-memory/README.md](error-memory/README.md)
+- Computer Use sessions: [computer-use/README.md](computer-use/README.md)
 - ADR: [adr/README.md](adr/README.md)
 - Active specs: [../specs/README.md](../specs/README.md)
 - AI rule init evals: [../evals/](../evals/)
